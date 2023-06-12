@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Work detail</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<!-- Fonts-->
+		<link rel="stylesheet" type="text/css" href="../assets/fonts/fontawesome/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="../assets/fonts/pe-icon/pe-icon.css">
+		<!-- Vendors-->
+		<link rel="stylesheet" type="text/css" href="../assets/vendors/bootstrap/grid.css">
+		<link rel="stylesheet" type="text/css" href="../assets/vendors/magnific-popup/magnific-popup.min.css">
+		<link rel="stylesheet" type="text/css" href="../assets/vendors/swiper/swiper.css">
+		<!-- App & fonts-->
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700|Open+Sans:400,700">
+		<link rel="stylesheet" type="text/css" id="app-stylesheet" href="../assets/css/main.css"><!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	
+	<body>
+		<div class="page-wrap" id="root">
+			
+			<!-- header -->
+			<header class="header header--fixed">
+				<div class="header__inner">
+					<!-- <div class="header__logo"><a href="../index.html"><img src="../assets/img/logo.png" alt="" style="width: 122px;"/></a></div> -->
+					<div class="navbar-toggle" id="fs-button">
+						<div class="navbar-icon"><span></span></div>
+					</div>
+				</div>
+				
+				<!-- fullscreenmenu__module -->
+				<div class="fullscreenmenu__module" trigger="#fs-button">
+					
+					<!-- overlay-menu -->
+					<nav class="overlay-menu">
+						
+						<!--  -->
+						<ul class="wil-menu-list">
+							<li><a href="../index.html">Home</a>
+							</li>
+							<li><a href="../about.html">About Me</a>
+							</li>
+						</ul><!--  -->
+						
+					</nav><!-- End / overlay-menu -->
+					
+				</div><!-- End / fullscreenmenu__module -->
+				
+			</header><!-- End / header -->
+			
+			<!-- Content-->
+			<div class="wil-content">
+				
+				<!-- Section -->
+				<section class="awe-section">
+					<div class="container">
+						
+						<!-- page-title -->
+						<div class="page-title pb-40">
+							<h2 class="page-title__title">U-Net and Fully Convolutional Network for Forest Segmentation: A Comparative Study
+							</h2>
+							<!-- <p class="page-title__text">U-Net and Fully Convolutional Network for Forest Segmentation: A Comparative Study -->
+							<!-- </p> -->
+							<div class="page-title__divider"></div>
+						</div><!-- End / page-title -->
+						
+					</div>
+				</section>
+				<!-- End / Section -->
+				
+				
+				<!-- Section -->
+				<section class="awe-section bg-gray">
+					<div class="container">
+						
+						<!--  -->
+						<div>
+							<div class="work-detail__entry">
+								<h1 class="title__title">Background</h1><br>
+								<p>
+									This project is based on my undergraduate thesis titled "Comparative Study between Hierarchical Neural Network and Single Convolutional Neural Network for Image Classification with Hierarchical Data". This project compares image classification performance for both hierarchical (HNN) and single CNN models. Both models are evaluated based on Top-1 Accuracy and F1-Score.
+								</p>
+								<h1 class="title__title">Objective</h1><br>
+								<p>
+									This project is aimed to:
+									<ol>
+										<li>
+											To compare the classification performence between HNN and single CNN models on CIFAR-100 dataset subset.
+										</li>
+									</ol>
+								</p>
+								<h1 class="title__title">Dataset</h1><br>
+								<p>
+									Both CNN and HNN models are trained on a subset of CIFAR-100 dataset, which is a dataset with hierarchical class labels. 
+									10 out of 20 coarse classes in the base dataset are used in this project, with each coarse class containing 5 fine classes. 
+									There are 30000 images in total which are used for both training and validation phase for both models. 
+									Each image on the dataset is a 32*32 resolution image with three color channels. 
+									Image and label samples from the dataset can be seen below.
+								</p>
+
+								<div>
+									<div class="work-img"><img src="../assets/img/works/hnn.png" alt="">
+									</div><br>
+									<p class="center">Image and label samples of CIFAR-100</p>
+								</div>
+								
+								<h1 class="title__title">Model Architecture</h1><br>
+								<p>
+									VGG-16 pre-trained model with modified multi layer perceptron and output layer is used for both architecture, 
+									which is 1 model for CNN and 11 (10 models for fine-level classification and 1 model for coarse-level classification). 
+									The main differences between CNN and HNN architectures are the number of steps to produce a final classification label given an image, 
+									and the fact that a CNN model only produces fine-level classification model, rather than hierarchical (both coarse and fine levels) classification 
+									as performed by HNN. The steps for both CNN and HNN architectures from an image input to a final classification label can be seen in these flowcharts below.
+
+								</p>
+								<div>
+									<div class="work-img">
+										<img src="../assets/img/works/hnnflow.png" alt="" >
+										
+									</div><br>
+									<p class="center">Hierarchical Neural Network (HNN) flow for image classification</p>
+								</div><br>
+
+								<div>
+									<div class=" work-img">
+										<img src="../assets/img/works/cnnflow.png" alt="" >
+									</div><br>
+									<p class="center">Single Convolutional Neural Network (CNN) flow for image classification</p>	
+								</div><br>
+
+								<h1 class="title__title">Evaluation</h1><br>
+								<p>
+									In this project, we use two different metrics to evaluate image classification 
+									performance for both CNN and HNN models. We use Top-1 Accuracy metric as the main evaluation metric, 
+									and also F1-Score metric as a secondary metric.
+								</p>
+								
+								<h1 class="title__title">Results</h1><br>
+								<p>
+									Both Top-1 Accuracy and F1-Score metrics for both CNN and HNN models can be seen in the table below.
+								</p>
+								<div>
+									<div class="work-img">
+										<img src="../assets/img/works/hnnresults.png" alt="" >
+										
+									</div><br>
+									<p class="center">Evaluation results for both CNN and HNN models</p>
+								</div><br>
+								<p>
+									Based on these results, we can conclude that the differences of classification performance between single CNN and HNN models are not 
+									very significant, with the results slightly favor that of single CNN model. For both models, the Top-1 Accuracy score tops out at around 
+									52%. We suspect that the relatively small size of images and also that the amount of images for each classes is relatively few might contribute to the 
+									low classification performance. For further developments, it is suggested to increase the number of images by combining this dataset with other relevant datasets.
+								</p>
+							</div>
+							
+					</div>
+				</section>
+				<!-- End / Section -->
+				
+			</div>
+			<!-- End / Content-->
+			
+			<!-- footer -->
+			<!-- <div class="footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 col-lg-6 ">
+							<p class="footer__coppy">2018 &copy; Copyright <a href="http://awe7.com/">Awe7</a>. All rights Reserved.</p>
+						</div>
+						<div class="col-md-6 col-lg-6 ">
+							<div class="footer__social">
+								
+								<a class="social-icon" href="#"><i class="social-icon__icon fa fa-facebook"></i>
+								</a>
+								
+								
+								<a class="social-icon" href="#"><i class="social-icon__icon fa fa-twitter"></i>
+								</a>
+								
+								
+								<a class="social-icon" href="#"><i class="social-icon__icon fa fa-linkedin"></i>
+								</a>
+								
+								
+								<a class="social-icon" href="#"><i class="social-icon__icon fa fa-behance"></i>
+								</a>
+								
+								
+								<a class="social-icon" href="#"><i class="social-icon__icon fa fa-vimeo"></i>
+								</a>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> -->
+			
+		</div>
+		<!-- Vendors-->
+		<script type="text/javascript" src="../assets/vendors/jquery/jquery.min.js"></script>
+		<script type="text/javascript" src="../assets/vendors/imagesloaded/imagesloaded.pkgd.js"></script>
+		<script type="text/javascript" src="../assets/vendors/isotope-layout/isotope.pkgd.js"></script>
+		<script type="text/javascript" src="../assets/vendors/jquery-one-page/jquery.nav.min.js"></script>
+		<script type="text/javascript" src="../assets/vendors/jquery.easing/jquery.easing.min.js"></script>
+		<script type="text/javascript" src="../assets/vendors/jquery.matchHeight/jquery.matchHeight.min.js"></script>
+		<script type="text/javascript" src="../assets/vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
+		<script type="text/javascript" src="../assets/vendors/masonry-layout/masonry.pkgd.js"></script>
+		<script type="text/javascript" src="../assets/vendors/jquery.waypoints/jquery.waypoints.min.js"></script>
+		<script type="text/javascript" src="../assets/vendors/swiper/swiper.jquery.js"></script>
+		<script type="text/javascript" src="../assets/vendors/menu/menu.js"></script>
+		<script type="text/javascript" src="../assets/vendors/typed/typed.min.js"></script>
+		<!-- App-->
+		<script type="text/javascript" src="../assets/js/main.js"></script>
+	</body>
+</html>

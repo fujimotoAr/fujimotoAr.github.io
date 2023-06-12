@@ -178,6 +178,11 @@ img {
     border: 0;
 }
 
+.center{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
 /* table Responsive */
 
 .table-responsive-01 {
@@ -235,12 +240,12 @@ img {
 }
 
 a {
-    color: #ff594f;
+    color: #000000;
 }
 
 a:hover {
-    text-decoration: line-through;
-    color: #ff594f;
+    /* text-decoration: ; */
+    color: #04bcd4;
 }
 
 a:focus {
@@ -314,7 +319,7 @@ hr {
 .md-btn:hover {
     background-color: #ebebeb;
     color: #000;
-    text-decoration: line-through;
+    /* text-decoration: line-through; */
 }
 
 .md-btn[disabled] {
@@ -956,8 +961,8 @@ ul {
 }
 
 .overlay-menu ul li.active > a, .overlay-menu ul li a:hover {
-    color: #ff594f;
-    text-decoration: line-through;
+    color: #31b0d5;
+    /* text-decoration: line-through; */
 }
 
 .fs-button {
@@ -1714,7 +1719,7 @@ ul {
 }
 
 .grid-css .grid-item .grid-item__inner .grid-item__content-wrapper {
-    background-color: #ccc;
+    /* background-color: #ccc; */
 }
 
 .grid-css.grid-css--grid .grid-item__content-wrapper {
@@ -1745,6 +1750,47 @@ ul {
     color: #555;
     padding: 5px 10px;
 }
+
+
+/* WORKBOX */
+.workbox {
+    position: relative;
+    overflow: hidden;
+    padding-top: 0 !important;
+    z-index: 9;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 1px 2px 1px 2px rgba(0, 0, 0, 0.074);
+    box-shadow: inset;
+}
+.work-image {
+    height: 150px;
+    overflow: hidden;
+    object-fit: fill;
+
+}
+.work-content {
+    height: 85px;
+    /* overflow: ; */
+    padding-left: 4% !important;
+    padding-right: 4% !important;
+    padding-top: 4% !important;
+    padding-bottom: 15% !important;
+    /* overflow: scroll; */
+    
+
+}
+
+/* .workbox.light .hb_back {
+    background-color: rgba(255, 255, 255, .8);
+    color: #333;
+}
+
+.workbox.light .hb_back h2, .hoverbox.light .hb_back h3,
+.workbox.light .hb_back h4 {
+    color: #333;
+} */
+
 
 /* 10. hoverbox
 --------------------------------------------------------------------------------*/
@@ -2306,6 +2352,10 @@ ul {
 
 .work-detail__entry .work-img {
     margin-top: 30px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 /* 19. work
@@ -2325,22 +2375,31 @@ ul {
     font-weight: bold;
     margin-top: 0;
     margin-bottom: 0;
+    overflow:hidden; 
+    white-space:nowrap; 
+    overflow-wrap: break-word;
+    text-overflow:ellipsis;
+    /* text-overflow: ellipsis; */
+    
 }
 
 @media (min-width: 320px) {
     .work__title {
-        font-size: calc(.45455vw + 16.54545px);
+        font-size: calc(.45455vw + 10.54545px);
     }
 }
 
 @media (min-width: 1200px) {
     .work__title {
-        font-size: 22px;
+        /* font-size: 22px; */
     }
 }
 
 .work__text {
     font-size: 14px;
+    position: absolute;
+    bottom: 0;
+    
 }
 
 @media (min-width: 993px) {
