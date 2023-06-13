@@ -61,10 +61,10 @@
 						
 						<!-- page-title -->
 						<div class="page-title pb-40">
-							<h2 class="page-title__title">News Sentiment Analysis (Gemastik XV)
+							<h2 class="page-title__title">Indonesian Nickel Export Data
 							</h2>
-							<!-- <p class="page-title__text">U-Net and Fully Convolutional Network for Forest Segmentation: A Comparative Study -->
-							<!-- </p> -->
+							<p class="page-title__text">Database and visualization of nickel commodities export
+							</p>
 							<div class="page-title__divider"></div>
 						</div><!-- End / page-title -->
 						
@@ -82,67 +82,48 @@
 							<div class="work-detail__entry">
 								<h1 class="title__title">Background</h1><br>
 								<p>
-									For the final stage of Gemastik XV, our team were asked to classify news sentiment whether it's positive, negative, or neutral. 
-									There are several features given in the competition dataset, and we were expected to use one or more feature(s) to produce a sentiment label for each test data. 
-									Participants were free to use any kind of machine learning model, whether deep learning models or conventional models.
-								</p>
+									For this project, we implemented a python program to retrieve monthly data related to nickel 
+									exports from Indonesia to other countries from the UN Comtrade website using the provided free API in our python implementation. 
+									I will give a summary for data visualization using Tableau with a subset data used in this project, which is nickel exports from 2015 to 2019. 
+</p>
 								<h1 class="title__title">Objective</h1><br>
 								<p>
-									This task was aimed to:
+									For this project, we aimed to:
 									<ol>
 										<li>
-											To classify news sentiment based on features.
+											To retrieve monthly nickel exports data from UN Comtrade website
+										</li>
+										<li>
+											To store the fetched data to a MySQL database
 										</li>
 									</ol>
 								</p>
-								<!-- <h1 class="title__title">Implementation Flow</h1><br> -->
-								
-								<h1 class="title__title">Dataset</h1><br>
+								<h1 class="title__title">The API and our python code</h1><br>
 								<p>
-									The dataset used in this competition could not be disclosed. In short, several data consisting of features related to news entries and their labels were given to 
-									the participants. For grading purposes, there was also given the test data similar to the training data without the labels. Validation data could be produced by splitting 
-									the training data into training and validation splits.
-								</p>
-								
-								<h1 class="title__title">Data Cleaning</h1><br>
-								<p>
-									We performed text cleaning for the given dataset according to these aspects:
-									<ol>
-										<li>
-											Converting each text into lowercase form
-										</li>
-										<li>
-											Removing website URL(s)
-										</li>
-										<li>
-											Removing punctuations such as the question sign '?' and the asterix '*'
-										</li>
-										<li>
-											Replacing endline '\n' with a whitespace
-										</li>
-									</ol>
+									
 								</p>
 
-								<h1 class="title__title">Model Architecture</h1><br>
+								<div>
+									<!-- <div class="work-img"><img src="../assets/img/works/forest/amazonpair.png" alt=""> -->
+									<!-- </div><br> -->
+									<!-- <p class="center">Image and mask pairs of Amazon dataset</p> -->
+								</div>
+								
+								<h1 class="title__title">Data Visualization</h1><br>
 								<p>
-									We implemented several architectures for this competition, one of which is the Bidirectional Long Short Term Memory (BiLSTM) architecture. 
+									We use Tableau to create visualisasion from the data stored in a MySQL database. For our bar chart, we opted to use a logarithmic scale as the export quantity of each country varies greatly, 
+									in which case a logaritmic chart scale makes the chart easier to read. A preview for the Tableau dashboard can be seen in the image below.
+									
 								</p>
 								<div>
 									<div class="work-img">
-										<!-- <img src="../assets/img/works/forest/u-netarch.png" alt="" > -->
+										<img src="../assets/img/works/nickel/nickel.png" alt="" >
 										
 									</div><br>
-									<p class="center">BiLSTM architecture</p>
+									<p class="center">Nickel export visualization with Tableau</p>
 								</div><br>
-								<p>
-									Bidirectional Long Short Term Memory (BiLSTM) is a two-way version of the LSTM recurrent neural network architecture. Compared to its single directional version, 
-									BiLSTM is capable of capturing contexts from both the beginning and the end of the text, improving its classification performance. Therefore, we elected to use BiLSTM instead of 
-									standard LSTM model.
-								</p>
-								<h1 class="title__title">Evaluation and Result</h1><br>
-								<p>
-									In this project, we use F1-Score as the evaluation metric. After several optimizations, we achieved a F1-Score of 66.79% on test dataset with BiLSTM architecture.
-								</p>
+
+								
 							</div>
 							
 					</div>
