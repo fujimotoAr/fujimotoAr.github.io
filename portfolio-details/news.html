@@ -61,9 +61,10 @@
 						
 						<!-- page-title -->
 						<div class="page-title pb-40">
-							<h2 class="page-title__title">Hierarchical Image Classification</h2>
-							<p class="page-title__text">Hierarchical Image Classification with Hierarchical Neural Network with CIFAR-100 dataset
-							</p>
+							<h2 class="page-title__title">News Sentiment Analysis (Gemastik XV)
+							</h2>
+							<!-- <p class="page-title__text">U-Net and Fully Convolutional Network for Forest Segmentation: A Comparative Study -->
+							<!-- </p> -->
 							<div class="page-title__divider"></div>
 						</div><!-- End / page-title -->
 						
@@ -81,79 +82,66 @@
 							<div class="work-detail__entry">
 								<h1 class="title__title">Background</h1><br>
 								<p>
-									This project is based on my undergraduate thesis titled "Comparative Study between Hierarchical Neural Network and Single Convolutional Neural Network for Image Classification with Hierarchical Data". This project compares image classification performance for both hierarchical (HNN) and single CNN models. Both models are evaluated based on Top-1 Accuracy and F1-Score.
+									For the final stage of Gemastik XV, our team were asked to classify news sentiment whether it's positive, negative, or neutral. 
+									There are several features given in the competition dataset, and we were expected to use one or more feature(s) to produce a sentiment label for each test data. 
+									Participants were free to use any kind of machine learning model, whether deep learning models or conventional models.
 								</p>
 								<h1 class="title__title">Objective</h1><br>
 								<p>
-									This project is aimed to:
+									This task was aimed to:
 									<ol>
 										<li>
-											To compare the classification performence between HNN and single CNN models on CIFAR-100 dataset subset.
+											To classify news sentiment based on features.
 										</li>
 									</ol>
 								</p>
+								<h1 class="title__title">Implementation Flow</h1><br>
+								
 								<h1 class="title__title">Dataset</h1><br>
 								<p>
-									Both CNN and HNN models are trained on a subset of CIFAR-100 dataset, which is a dataset with hierarchical class labels. 
-									10 out of 20 coarse classes in the base dataset are used in this project, with each coarse class containing 5 fine classes. 
-									There are 30000 images in total which are used for both training and validation phase for both models. 
-									Each image on the dataset is a 32*32 resolution image with three color channels. 
-									Image and label samples from the dataset can be seen below.
+									The dataset used in this competition could not be disclosed. In short, several data consisting of features related to news entries and their labels were given to 
+									the participants. For grading purposes, there was also given the test data similar to the training data without the labels. Validation data could be produced by splitting 
+									the training data into training and validation splits.
+								</p>
+								
+								<h1 class="title__title">Data Cleaning</h1><br>
+								<p>
+									We performed text cleaning for the given dataset according to these aspects:
+									<ol>
+										<li>
+											Converting each text into lowercase form
+										</li>
+										<li>
+											Removing website URL(s)
+										</li>
+										<li>
+											Removing punctuations such as the question sign '?' and the asterix '*'
+										</li>
+										<li>
+											Replacing endline '\n' with a whitespace
+										</li>
+									</ol>
 								</p>
 
-								<div>
-									<div class="work-img"><img src="../assets/img/works/hnn.png" alt="">
-									</div><br>
-									<p class="center">Image and label samples of CIFAR-100</p>
-								</div>
-								
 								<h1 class="title__title">Model Architecture</h1><br>
 								<p>
-									VGG-16 pre-trained model with modified multi layer perceptron and output layer is used for both architecture, 
-									which is 1 model for CNN and 11 (10 models for fine-level classification and 1 model for coarse-level classification). 
-									The main differences between CNN and HNN architectures are the number of steps to produce a final classification label given an image, 
-									and the fact that a CNN model only produces fine-level classification model, rather than hierarchical (both coarse and fine levels) classification 
-									as performed by HNN. The steps for both CNN and HNN architectures from an image input to a final classification label can be seen in these flowcharts below.
-
+									We implemented several architectures for this competition, one of which is the Bidirectional Long Short Term Memory (BiLSTM) architecture. 
 								</p>
 								<div>
 									<div class="work-img">
-										<img src="../assets/img/works/hnnflow.png" alt="" >
+										<!-- <img src="../assets/img/works/forest/u-netarch.png" alt="" > -->
 										
 									</div><br>
-									<p class="center">Hierarchical Neural Network (HNN) flow for image classification</p>
+									<p class="center">BiLSTM architecture</p>
 								</div><br>
-
-								<div>
-									<div class=" work-img">
-										<img src="../assets/img/works/cnnflow.png" alt="" >
-									</div><br>
-									<p class="center">Single Convolutional Neural Network (CNN) flow for image classification</p>	
-								</div><br>
-
-								<h1 class="title__title">Evaluation</h1><br>
 								<p>
-									In this project, we use two different metrics to evaluate image classification 
-									performance for both CNN and HNN models. We use Top-1 Accuracy metric as the main evaluation metric, 
-									and also F1-Score metric as a secondary metric.
+									Bidirectional Long Short Term Memory (BiLSTM) is a two-way version of the LSTM recurrent neural network architecture. Compared to its single directional version, 
+									BiLSTM is capable of capturing contexts from both the beginning and the end of the text, improving its classification performance. Therefore, we elected to use BiLSTM instead of 
+									standard LSTM model.
 								</p>
-								
-								<h1 class="title__title">Results</h1><br>
+								<h1 class="title__title">Evaluation and Result</h1><br>
 								<p>
-									Both Top-1 Accuracy and F1-Score metrics for both CNN and HNN models can be seen in the table below.
-								</p>
-								<div>
-									<div class="work-img">
-										<img src="../assets/img/works/hnnresults.png" alt="" >
-										
-									</div><br>
-									<p class="center">Evaluation results for both CNN and HNN models</p>
-								</div><br>
-								<p>
-									Based on these results, we can conclude that the differences of classification performance between single CNN and HNN models are not 
-									very significant, with the results slightly favor that of single CNN model. For both models, the Top-1 Accuracy score tops out at around 
-									52%. We suspect that the relatively small size of images and also that the amount of images for each classes is relatively few might contribute to the 
-									low classification performance. For further developments, it is suggested to increase the number of images by combining this dataset with other relevant datasets.
+									In this project, we use F1-Score as the evaluation metric. After several optimizations, we achieved a F1-Score of 66.79% on test dataset with BiLSTM architecture.
 								</p>
 							</div>
 							

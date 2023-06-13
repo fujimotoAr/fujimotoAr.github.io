@@ -82,80 +82,97 @@
 							<div class="work-detail__entry">
 								<h1 class="title__title">Background</h1><br>
 								<p>
-									This project is based on my undergraduate thesis titled "Comparative Study between Hierarchical Neural Network and Single Convolutional Neural Network for Image Classification with Hierarchical Data". This project compares image classification performance for both hierarchical (HNN) and single CNN models. Both models are evaluated based on Top-1 Accuracy and F1-Score.
+									The increasing occurrence of deforestation activities negatively affects the environment in Indonesia. Among these impacts are global warming and the destruction of wildlife habitat. 
+									With the advances in technology, particularly in aerial imaging with drones and satellites, we can analyse the aerial images to map forest and non-forest segments given an image to track the deforestation rate. 
+									In this project we compared U-Net and Fully Convolutional Network (FCN) architectures for forest segmentation. We use two different datasets for this project, which is "Amazon" and "Forest Aerial Images for Segmentation" datasets. 
 								</p>
 								<h1 class="title__title">Objective</h1><br>
 								<p>
-									This project is aimed to:
+									This project was aimed to:
 									<ol>
 										<li>
-											To compare the classification performence between HNN and single CNN models on CIFAR-100 dataset subset.
+											To perform forest image segmentation.
+										</li>
+										<li>
+											To find the best method to segment forest images.
 										</li>
 									</ol>
 								</p>
 								<h1 class="title__title">Dataset</h1><br>
 								<p>
-									Both CNN and HNN models are trained on a subset of CIFAR-100 dataset, which is a dataset with hierarchical class labels. 
-									10 out of 20 coarse classes in the base dataset are used in this project, with each coarse class containing 5 fine classes. 
-									There are 30000 images in total which are used for both training and validation phase for both models. 
-									Each image on the dataset is a 32*32 resolution image with three color channels. 
-									Image and label samples from the dataset can be seen below.
+									We use two datasets in this project: which is the Amazon dataset [1] containing 45 images with each image sized 512*512 pixels with three colour channels, 
+									and the Forest Aerial Images for Segmentation dataset [2] containing 5108 images sized 256*256 pixels with three colour channels. 
+									Each image from both datasets comes in pair with its corresponding masks which functions as its label. For illustration purposes, the image and mask pairs of the Amazon dataset can be seen 
+									in the table below.
 								</p>
 
 								<div>
-									<div class="work-img"><img src="../assets/img/works/hnn.png" alt="">
+									<div class="work-img"><img src="../assets/img/works/forest/amazonpair.png" alt="">
 									</div><br>
-									<p class="center">Image and label samples of CIFAR-100</p>
+									<p class="center">Image and mask pairs of Amazon dataset</p>
 								</div>
 								
 								<h1 class="title__title">Model Architecture</h1><br>
 								<p>
-									VGG-16 pre-trained model with modified multi layer perceptron and output layer is used for both architecture, 
-									which is 1 model for CNN and 11 (10 models for fine-level classification and 1 model for coarse-level classification). 
-									The main differences between CNN and HNN architectures are the number of steps to produce a final classification label given an image, 
-									and the fact that a CNN model only produces fine-level classification model, rather than hierarchical (both coarse and fine levels) classification 
-									as performed by HNN. The steps for both CNN and HNN architectures from an image input to a final classification label can be seen in these flowcharts below.
-
+									The U-Net architecture consists of contracting and expansive paths, as can be seen in the picture below. The contracting path consists of 
+									convulutional and pooling layers like those in Convolutional Neural Networks (CNN). 
+									On the other hand, an upsampling process is done in the expansive path, followed by up-convolutions, 
+									merging of feature maps from the contracting path, and also repeated usage of convolutional layers [3].
 								</p>
 								<div>
 									<div class="work-img">
-										<img src="../assets/img/works/hnnflow.png" alt="" >
+										<img src="../assets/img/works/forest/u-netarch.png" alt="" >
 										
 									</div><br>
-									<p class="center">Hierarchical Neural Network (HNN) flow for image classification</p>
+									<p class="center">U-Net architecture [3]</p>
 								</div><br>
-
+								<p>
+									For the Fully Convolutional Network (FCN) architecture, there are several variants of FCN, among those are the FCN-32, FCN-16, and FCN-8. The main difference between these variants is the number of upsampling processes, which is one for FCN-32, two for FCN-16, and three for FCN-8. 
+									In this project, we used only FCN-16 and FCN-8 to perform forest image segmentation. An illustration for FCN and its variants is shown in a picture below.
+								</p>
 								<div>
 									<div class=" work-img">
-										<img src="../assets/img/works/cnnflow.png" alt="" >
+										<img src="../assets/img/works/forest/fcnvar.png" alt="" >
 									</div><br>
-									<p class="center">Single Convolutional Neural Network (CNN) flow for image classification</p>	
+									<p class="center">Fully Convolutional Networks (FCN) and its variants [4]</p>	
 								</div><br>
 
 								<h1 class="title__title">Evaluation</h1><br>
 								<p>
-									In this project, we use two different metrics to evaluate image classification 
-									performance for both CNN and HNN models. We use Top-1 Accuracy metric as the main evaluation metric, 
-									and also F1-Score metric as a secondary metric.
+									In this project, we use three metrics to evaluate segmentation performance 
+									for both U-Net, FCN-16 and FCN-8 architectures. We use Intersection over Union, Dice coefficient, and Accuracy metrics.
 								</p>
 								
 								<h1 class="title__title">Results</h1><br>
 								<p>
-									Both Top-1 Accuracy and F1-Score metrics for both CNN and HNN models can be seen in the table below.
+									The segmentation performance based on Intersection over Union, Dice, and Accuracy for the three architectures can be seen in the table below.
 								</p>
 								<div>
 									<div class="work-img">
-										<img src="../assets/img/works/hnnresults.png" alt="" >
+										<img src="../assets/img/works/forest/resultsall.png" alt="" >
 										
 									</div><br>
-									<p class="center">Evaluation results for both CNN and HNN models</p>
+									<p class="center">Evaluation results for all architectures with both datasets</p>
 								</div><br>
 								<p>
-									Based on these results, we can conclude that the differences of classification performance between single CNN and HNN models are not 
-									very significant, with the results slightly favor that of single CNN model. For both models, the Top-1 Accuracy score tops out at around 
-									52%. We suspect that the relatively small size of images and also that the amount of images for each classes is relatively few might contribute to the 
-									low classification performance. For further developments, it is suggested to increase the number of images by combining this dataset with other relevant datasets.
+									Based on these results, we can conclude that the usage of FCN-8 architecture results in better segmentation performance for all three metrics in both datasets. 
+									On the Amazon dataset, FCN-8 came out on top for all metrics, followed by U-Net and FCN-16. On the other hand, for Forest Aerial Images for Segmentation dataset, FCN-16 produced better performance 
+									than U-Net.
 								</p>
+
+								<h1 class="title__title">References</h1><br>
+								<ol>
+									<li>L. Bragagnolo, R. V. da Silva, dan J. M. V. Grzybowski, “Amazon Rainforest dataset for semantic segmentation.” Zenodo, 27 May 2019. doi: 10.5281/ZENODO.3233081.</li>
+									<li>Q. Shaikh, “Forest Aerial Images for Segmentation,” Juni 2018. https://www.kaggle.com/datasets/quadeer15sh/augmented-forest-segmentation (accessed 21 September 2022).</li>
+									<li>O. Ronneberger, P. Fischer, dan T. Brox, “U-Net: Convolutional Networks for Biomedical Image Segmentation.” arXiv, 18 May 2015. doi: 10.48550/arXiv.1505.04597.</li>
+									<li>J. Long, E. Shelhamer, dan T. Darrell, “Fully Convolutional Networks for Semantic Segmentation.” arXiv, 8 March 2015. accessed: 16 September 2022. [Online]. Available at: http://arxiv.org/abs/1411.4038</li>
+								</ol>
+								<h1 class="title__title">Github link</h1><br>
+								<ul>
+									<li>
+										<a href="https://github.com/fujimotoAr/ShupponKu">https://github.com/fujimotoAr/ShupponKu</a>
+									</li>
+								</ul>
 							</div>
 							
 					</div>
