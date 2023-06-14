@@ -26,7 +26,7 @@
 			<!-- header -->
 			<header class="header header--fixed">
 				<div class="header__inner">
-					<!-- <div class="header__logo"><a href="../index.html"><img src="../assets/img/logo.png" alt="" style="width: 122px;"/></a></div> -->
+					<div class="header__logo"><a href="../index.html"><img src="../assets/img/logo.png" alt="" style="width: 122px;"/></a></div>
 					<div class="navbar-toggle" id="fs-button">
 						<div class="navbar-icon"><span></span></div>
 					</div>
@@ -80,13 +80,32 @@
 						<!--  -->
 						<div>
 							<div class="work-detail__entry">
-								<h1 class="title__title">Background</h1><br>
+								<h2 class="title__title">Background</h2><br>
 								<p>
 									For the final stage of Gemastik XV, our team were asked to classify news sentiment whether it's positive, negative, or neutral. 
 									There are several features given in the competition dataset, and we were expected to use one or more feature(s) to produce a sentiment label for each test data. 
 									Participants were free to use any kind of machine learning model, whether deep learning models or conventional models.
 								</p>
-								<h1 class="title__title">Objective</h1><br>
+								<p>
+									Some information related to this project are as follows:
+									<ul style="list-style-type:square; padding-left: 2%;">
+										<li>
+											Team members: 
+											<ol>
+												<li>Theofilus Arkhi Susanto</li>
+												<li>Nur Alfi Laily</li>
+												<li>Siti Muslimah K.H.N.</li>
+											</ol>
+										</li>
+										<li>University: Universitas Gadjah Mada</li>
+										<li>Type of project: Competition Project</li>
+										<li>Type of task: Natural Language Processing</li>
+										<!-- <li>
+											Participated on 
+										</li> -->
+									</ul>
+								</p>
+								<h2 class="title__title">Objective</h2><br>
 								<p>
 									This task was aimed to:
 									<ol>
@@ -97,14 +116,14 @@
 								</p>
 								<!-- <h1 class="title__title">Implementation Flow</h1><br> -->
 								
-								<h1 class="title__title">Dataset</h1><br>
+								<h2 class="title__title">Dataset</h2><br>
 								<p>
 									The dataset used in this competition could not be disclosed. In short, several data consisting of features related to news entries and their labels were given to 
 									the participants. For grading purposes, there was also given the test data similar to the training data without the labels. Validation data could be produced by splitting 
 									the training data into training and validation splits.
 								</p>
 								
-								<h1 class="title__title">Data Cleaning</h1><br>
+								<h2 class="title__title">Data Cleaning</h2><br>
 								<p>
 									We performed text cleaning for the given dataset according to these aspects:
 									<ol>
@@ -123,13 +142,13 @@
 									</ol>
 								</p>
 
-								<h1 class="title__title">Model Architecture</h1><br>
+								<h2 class="title__title">Model Architecture</h2><br>
 								<p>
 									We implemented several architectures for this competition, one of which is the Bidirectional Long Short Term Memory (BiLSTM) architecture. 
 								</p>
 								<div>
 									<div class="work-img">
-										<!-- <img src="../assets/img/works/forest/u-netarch.png" alt="" > -->
+										<img src="../assets/img/works/news/bidirectionallstm.png" alt="" >
 										
 									</div><br>
 									<p class="center">BiLSTM architecture</p>
@@ -139,7 +158,7 @@
 									BiLSTM is capable of capturing contexts from both the beginning and the end of the text, improving its classification performance. Therefore, we elected to use BiLSTM instead of 
 									standard LSTM model.
 								</p>
-								<h1 class="title__title">Evaluation and Result</h1><br>
+								<h2 class="title__title">Evaluation and Result</h2><br>
 								<p>
 									In this project, we use F1-Score as the evaluation metric. After several optimizations, we achieved a F1-Score of 66.79% on test dataset with BiLSTM architecture.
 								</p>
@@ -152,40 +171,35 @@
 			</div>
 			<!-- End / Content-->
 			
-			<!-- footer -->
-			<!-- <div class="footer">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-6 col-lg-6 ">
-							<p class="footer__coppy">2018 &copy; Copyright <a href="http://awe7.com/">Awe7</a>. All rights Reserved.</p>
-						</div>
-						<div class="col-md-6 col-lg-6 ">
-							<div class="footer__social">
-								
-								<a class="social-icon" href="#"><i class="social-icon__icon fa fa-facebook"></i>
-								</a>
-								
-								
-								<a class="social-icon" href="#"><i class="social-icon__icon fa fa-twitter"></i>
-								</a>
-								
-								
-								<a class="social-icon" href="#"><i class="social-icon__icon fa fa-linkedin"></i>
-								</a>
-								
-								
-								<a class="social-icon" href="#"><i class="social-icon__icon fa fa-behance"></i>
-								</a>
-								
-								
-								<a class="social-icon" href="#"><i class="social-icon__icon fa fa-vimeo"></i>
-								</a>
-								
+						<!-- footer -->
+						<div class="footer">
+							<div class="container">
+								<div class="row">
+									<div class="col-md-6 col-lg-6 ">
+										<p class="footer__coppy" style="font-size: small;">Template modified from: <a href="https://themewagon.com/themes/free-responsive-personal-portfolio-template-download-minimus/">Themewagon</a></p>
+									</div>
+									<div class="col-md-6 col-lg-6 ">
+										<div class="footer__social">
+											
+											<!-- social-icon -->
+											<!-- <a class="social-icon" href="#"><i class="social-icon__icon fa fa-facebook"></i>
+											</a> -->
+											<!-- End / social-icon -->
+											
+											<!-- social-icon -->
+											<a class="social-icon" href="https://www.linkedin.com/in/theofilus-arkhi-susanto-a2609b211/"><img class="" src="../assets/img/icons/LIblack.png"></img>
+											</a>
+											<!-- End / social-icon -->
+											
+											<!-- social-icon -->
+											<a class="social-icon" href="https://github.com/fujimotoAr/"><img class="" src="../assets/img/icons/github-mark.svg"></img>
+											</a>
+											
+										</div>
+									</div>
+								</div>
 							</div>
-						</div>
-					</div>
-				</div>
-			</div> -->
+						</div><!-- End / footer -->
 			
 		</div>
 		<!-- Vendors-->

@@ -26,7 +26,7 @@
 			<!-- header -->
 			<header class="header header--fixed">
 				<div class="header__inner">
-					<!-- <div class="header__logo"><a href="../index.html"><img src="../assets/img/logo.png" alt="" style="width: 122px;"/></a></div> -->
+					<div class="header__logo"><a href="../index.html"><img src="../assets/img/logo.png" alt="" style="width: 122px;"/></a></div>
 					<div class="navbar-toggle" id="fs-button">
 						<div class="navbar-icon"><span></span></div>
 					</div>
@@ -63,8 +63,8 @@
 						<div class="page-title pb-40">
 							<h2 class="page-title__title">U-Net and Fully Convolutional Network for Forest Segmentation: A Comparative Study
 							</h2>
-							<!-- <p class="page-title__text">U-Net and Fully Convolutional Network for Forest Segmentation: A Comparative Study -->
-							<!-- </p> -->
+							<p class="page-title__text">A project for Gemastik XV Qualification Stage
+							</p>
 							<div class="page-title__divider"></div>
 						</div><!-- End / page-title -->
 						
@@ -80,13 +80,32 @@
 						<!--  -->
 						<div>
 							<div class="work-detail__entry">
-								<h1 class="title__title">Background</h1><br>
+								<h2 class="title__title">Background</h2><br>
 								<p>
 									The increasing occurrence of deforestation activities negatively affects the environment in Indonesia. Among these impacts are global warming and the destruction of wildlife habitat. 
 									With the advances in technology, particularly in aerial imaging with drones and satellites, we can analyse the aerial images to map forest and non-forest segments given an image to track the deforestation rate. 
 									In this project we compared U-Net and Fully Convolutional Network (FCN) architectures for forest segmentation. We use two different datasets for this project, which is "Amazon" and "Forest Aerial Images for Segmentation" datasets. 
 								</p>
-								<h1 class="title__title">Objective</h1><br>
+								<p>
+									Some information related to this project are as follows:
+									<ul style="list-style-type:square; padding-left: 2%;">
+										<li>
+											Team members: 
+											<ol>
+												<li>Theofilus Arkhi Susanto</li>
+												<li>Nur Alfi Laily</li>
+												<li>Siti Muslimah K.H.N.</li>
+											</ol>
+										</li>
+										<li>University: Universitas Gadjah Mada</li>
+										<li>Type of project: Competition Project</li>
+										<li>Type of task: Computer Vision, Image Segmentation</li>
+										<li>
+											Was submitted on 26th of October 2022 for Gemastik XV Qualification 
+										</li>
+									</ul>
+								</p>
+								<h2 class="title__title">Objective</h2><br>
 								<p>
 									This project was aimed to:
 									<ol>
@@ -98,7 +117,7 @@
 										</li>
 									</ol>
 								</p>
-								<h1 class="title__title">Dataset</h1><br>
+								<h2 class="title__title">Dataset</h2><br>
 								<p>
 									We use two datasets in this project: which is the Amazon dataset [1] containing 45 images with each image sized 512*512 pixels with three colour channels, 
 									and the Forest Aerial Images for Segmentation dataset [2] containing 5108 images sized 256*256 pixels with three colour channels. 
@@ -112,7 +131,7 @@
 									<p class="center">Image and mask pairs of Amazon dataset</p>
 								</div>
 								
-								<h1 class="title__title">Model Architecture</h1><br>
+								<h2 class="title__title">Model Architecture</h2><br>
 								<p>
 									The U-Net architecture consists of contracting and expansive paths, as can be seen in the picture below. The contracting path consists of 
 									convulutional and pooling layers like those in Convolutional Neural Networks (CNN). 
@@ -137,13 +156,13 @@
 									<p class="center">Fully Convolutional Networks (FCN) and its variants [4]</p>	
 								</div><br>
 
-								<h1 class="title__title">Evaluation</h1><br>
+								<h2 class="title__title">Evaluation</h2><br>
 								<p>
 									In this project, we use three metrics to evaluate segmentation performance 
 									for both U-Net, FCN-16 and FCN-8 architectures. We use Intersection over Union, Dice coefficient, and Accuracy metrics.
 								</p>
 								
-								<h1 class="title__title">Results</h1><br>
+								<h2 class="title__title">Results</h2><br>
 								<p>
 									The segmentation performance based on Intersection over Union, Dice, and Accuracy for the three architectures can be seen in the table below.
 								</p>
@@ -160,19 +179,18 @@
 									than U-Net.
 								</p>
 
-								<h1 class="title__title">References</h1><br>
+								<h2 class="title__title">References</h2><br>
 								<ol>
 									<li>L. Bragagnolo, R. V. da Silva, dan J. M. V. Grzybowski, “Amazon Rainforest dataset for semantic segmentation.” Zenodo, 27 May 2019. doi: 10.5281/ZENODO.3233081.</li>
 									<li>Q. Shaikh, “Forest Aerial Images for Segmentation,” Juni 2018. https://www.kaggle.com/datasets/quadeer15sh/augmented-forest-segmentation (accessed 21 September 2022).</li>
 									<li>O. Ronneberger, P. Fischer, dan T. Brox, “U-Net: Convolutional Networks for Biomedical Image Segmentation.” arXiv, 18 May 2015. doi: 10.48550/arXiv.1505.04597.</li>
 									<li>J. Long, E. Shelhamer, dan T. Darrell, “Fully Convolutional Networks for Semantic Segmentation.” arXiv, 8 March 2015. accessed: 16 September 2022. [Online]. Available at: http://arxiv.org/abs/1411.4038</li>
 								</ol>
-								<h1 class="title__title">Github link</h1><br>
-								<ul>
-									<li>
-										<a href="https://github.com/fujimotoAr/ShupponKu">https://github.com/fujimotoAr/ShupponKu</a>
-									</li>
-								</ul>
+								<h2 class="title__title">Github link</h2><br>
+								<p>
+									<a href="https://github.com/fujimotoAr/ShupponKu">https://github.com/fujimotoAr/ShupponKu</a>
+									 (notebooks repository)
+								</p>
 							</div>
 							
 					</div>
@@ -182,40 +200,35 @@
 			</div>
 			<!-- End / Content-->
 			
-			<!-- footer -->
-			<!-- <div class="footer">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-6 col-lg-6 ">
-							<p class="footer__coppy">2018 &copy; Copyright <a href="http://awe7.com/">Awe7</a>. All rights Reserved.</p>
-						</div>
-						<div class="col-md-6 col-lg-6 ">
-							<div class="footer__social">
-								
-								<a class="social-icon" href="#"><i class="social-icon__icon fa fa-facebook"></i>
-								</a>
-								
-								
-								<a class="social-icon" href="#"><i class="social-icon__icon fa fa-twitter"></i>
-								</a>
-								
-								
-								<a class="social-icon" href="#"><i class="social-icon__icon fa fa-linkedin"></i>
-								</a>
-								
-								
-								<a class="social-icon" href="#"><i class="social-icon__icon fa fa-behance"></i>
-								</a>
-								
-								
-								<a class="social-icon" href="#"><i class="social-icon__icon fa fa-vimeo"></i>
-								</a>
-								
+						<!-- footer -->
+						<div class="footer">
+							<div class="container">
+								<div class="row">
+									<div class="col-md-6 col-lg-6 ">
+										<p class="footer__coppy" style="font-size: small;">Template modified from: <a href="https://themewagon.com/themes/free-responsive-personal-portfolio-template-download-minimus/">Themewagon</a></p>
+									</div>
+									<div class="col-md-6 col-lg-6 ">
+										<div class="footer__social">
+											
+											<!-- social-icon -->
+											<!-- <a class="social-icon" href="#"><i class="social-icon__icon fa fa-facebook"></i>
+											</a> -->
+											<!-- End / social-icon -->
+											
+											<!-- social-icon -->
+											<a class="social-icon" href="https://www.linkedin.com/in/theofilus-arkhi-susanto-a2609b211/"><img class="" src="../assets/img/icons/LIblack.png"></img>
+											</a>
+											<!-- End / social-icon -->
+											
+											<!-- social-icon -->
+											<a class="social-icon" href="https://github.com/fujimotoAr/"><img class="" src="../assets/img/icons/github-mark.svg"></img>
+											</a>
+											
+										</div>
+									</div>
+								</div>
 							</div>
-						</div>
-					</div>
-				</div>
-			</div> -->
+						</div><!-- End / footer -->
 			
 		</div>
 		<!-- Vendors-->
